@@ -848,8 +848,98 @@ function createHearts(){
         },4200);
     }
 }
+    const photoSources = [
+    "IMG-20260926-WA0008.jpg",
+    "IMG-20260926-WA0009.jpg",
+    "IMG-20260926-WA0010.jpg",
+    "IMG-20260926-WA0011.jpg",
+    "IMG-20260926-WA0012.jpg",
+    "IMG-20260926-WA0013.jpg",
+    "1000428760-10mb.jpg",
+    "1000428793-10mb.jpg",
+    "IMG20240919191729.jpg",
+    "IMG_20230929_061111_436.jpg",
+    "IMG_20260926_085112_362.jpg"
+];
+
+let currentPhoto = 0;
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const lightboxCounter = document.getElementById("lightboxCounter");
+
+document.querySelectorAll(".photo img").forEach((img,index)=>{
+    img.addEventListener("click",()=>{
+        currentPhoto = index;
+        showPhoto();
+        lightbox.classList.add("active");
+        document.body.style.overflow="hidden";
+    });
+});
+
+function showPhoto(){
+    lightboxImage.src = photoSources[currentPhoto];
+    lightboxCounter.textContent =
+        (currentPhoto + 1) + " / " + photoSources.length;
+}
+
+function closeLightbox(){
+    lightbox.classList.remove("active");
+    document.body.style.overflow="";
+}
+
+function nextPhoto(){
+    currentPhoto =
+        (currentPhoto + 1) % photoSources.length;
+    showPhoto();
+}
+
+function previousPhoto(){
+    currentPhoto =
+        (currentPhoto - 1 + photoSources.length) % photoSources.length;
+    showPhoto();
+}
+
+lightbox.addEventListener("click",(e)=>{
+    if(e.target === lightbox){
+        closeLightbox();
+    }
+});
+
+document.addEventListener("keydown",(e)=>{
+    if(!lightbox.classList.contains("active")) return;
+
+    if(e.key === "ArrowRight"){
+        nextPhoto();
+    }
+
+    if(e.key === "ArrowLeft"){
+        previousPhoto();
+    }
+
+    if(e.key === "Escape"){
+        closeLightbox();
+    }
+});
 
 </script>
+    <!-- FULLSCREEN PHOTO VIEWER -->
+
+<div class="lightbox" id="lightbox">
+
+    <div class="lightbox-close" onclick="closeLightbox()">×</div>
+
+    <div class="lightbox-prev" onclick="previousPhoto()">❮</div>
+
+    <img id="lightboxImage" src="" alt="Memory">
+
+    <div class="lightbox-next" onclick="nextPhoto()">❯</div>
+
+    <div class="lightbox-counter" id="lightboxCounter">
+        1 / 11
+    </div>
+
+</div>
 
 </body>
         </html>
