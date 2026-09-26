@@ -1,1 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>For Someone Special ❤️</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: radial-gradient(circle at top, #35105c, #12051f 55%, #050208);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .stars {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 2s infinite alternate;
+        }
+
+        @keyframes twinkle {
+            from {
+                opacity: 0.2;
+                transform: scale(0.7);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1.4);
+            }
+        }
+
+        .screen {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .content {
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .small {
+            color: #e8bfff;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: clamp(42px, 12vw, 80px);
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #fff, #ffb7e8, #dba5ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #e8ddec;
+            margin-bottom: 35px;
+        }
+
+        button {
+            border: none;
+            padding: 16px 28px;
+            border-radius: 50px;
+            font-size: 16px;
+            color: white;
+            background: linear-gradient(135deg, #ff4f9a, #9b5cff);
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(255, 79, 154, 0.35);
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: translateY(-3px) scale(1.03);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .letter {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            padding: 30px;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            line-height: 1.9;
+            text-align: left;
+        }
+
+        .letter h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #ffb7e8;
+        }
+
+        .heart {
+            font-size: 65px;
+            margin-bottom: 20px;
+            animation: heartbeat 1.3s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.18);
+            }
+        }
+
+        .final {
+            font-size: 22px;
+            line-height: 1.8;
+            color: #f5dff0;
+        }
+
+        .signature {
+            margin-top: 25px;
+            color: #ff9dd5;
+            font-size: 18px;
+        }
+
+        .next {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="stars">
+        <span class="star" style="top:10%;left:15%;"></span>
+        <span class="star" style="top:20%;left:75%;"></span>
+        <span class="star" style="top:35%;left:40%;"></span>
+        <span class="star" style="top:55%;left:85%;"></span>
+        <span class="star" style="top:70%;left:20%;"></span>
+        <span class="star" style="top:82%;left:65%;"></span>
+        <span class="star" style="top:45%;left:8%;"></span>
+        <span class="star" style="top:90%;left:90%;"></span>
+    </div>
+
+
+    <!-- OPENING -->
+
+    <section class="screen" id="opening">
+
+        <div class="content">
+
+            <div class="small">
+                A little universe made for you
+            </div>
+
+            <h1>Hey, Beautiful ❤️</h1>
+
+            <p class="subtitle">
+                Today isn't just another day.<br>
+                It's the day the world became a little more beautiful.
+            </p>
+
+            <button onclick="openPortal()">
+                Enter Your Birthday Universe 💫
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- LETTER -->
+
+    <section class="screen hidden" id="letterSection">
+
+        <div class="content">
+
+            <div class="letter">
+
+                <h2>💌 A Letter For You</h2>
+
+                <p>
+                    Happy Birthday to the most special person in my life. ❤️
+                </p>
+
+                <br>
+
+                <p>
+                    I don't know if words will ever be enough to explain
+                    how much you mean to me, but today I want to try.
+                </p>
+
+                <br>
+
+                <p>
+                    You have this beautiful way of making ordinary moments
+                    feel extraordinary. Your smile, your laugh, your little
+                    habits — somehow they all became my favourite things.
+                </p>
+
+                <br>
+
+                <p>
+                    On your birthday, I simply want you to know that
+                    you are deeply appreciated, genuinely loved,
+                    and incredibly special.
+                </p>
+
+                <br>
+
+                <p>
+                    May this new year of your life bring you happiness,
+                    beautiful memories, endless smiles and everything
+                    your heart wishes for.
+                </p>
+
+                <div style="text-align:center" class="next">
+
+                    <button onclick="showFinal()">
+                        One More Thing... 💗
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FINAL -->
+
+    <section class="screen hidden" id="finalSection">
+
+        <div class="content">
+
+            <div class="heart">
+                ❤️
+            </div>
+
+            <div class="small">
+                One last secret
+            </div>
+
+            <p class="final">
+
+                If I could give you one thing today,
+                it would be the ability to see yourself
+                through my eyes.
+
+                <br><br>
+
+                Then you'd finally understand
+                just how precious you are to me.
+
+            </p>
+
+            <div class="signature">
+
+                Happy Birthday, My Love 🌹
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script>
+
+        function openPortal() {
+
+            document.getElementById("opening").classList.add("hidden");
+
+            document.getElementById("letterSection").classList.remove("hidden");
+
+            window.scrollTo(0, 0);
+
+        }
+
+        function showFinal() {
+
+            document.getElementById("letterSection").classList.add("hidden");
+
+            document.getElementById("finalSection").classList.remove("hidden");
+
+            window.scrollTo(0, 0);
+
+        }
+
+    </script>
+
+</body>
+  </html>
