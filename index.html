@@ -1,324 +1,700 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>For Someone Special ❤️</title>
+<title>For Indira ❤️</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        body {
-            min-height: 100vh;
-            font-family: Arial, sans-serif;
-            background: radial-gradient(circle at top, #35105c, #12051f 55%, #050208);
-            color: white;
-            overflow-x: hidden;
-        }
+html{
+    scroll-behavior:smooth;
+}
 
-        .stars {
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-        }
+body{
+    font-family:Arial, sans-serif;
+    background:#08030d;
+    color:white;
+    overflow-x:hidden;
+}
 
-        .star {
-            position: absolute;
-            width: 3px;
-            height: 3px;
-            background: white;
-            border-radius: 50%;
-            animation: twinkle 2s infinite alternate;
-        }
+body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+        radial-gradient(circle at 20% 20%,#4b1468 0,transparent 30%),
+        radial-gradient(circle at 80% 30%,#64164d 0,transparent 28%),
+        radial-gradient(circle at 50% 80%,#27104f 0,transparent 35%);
+    z-index:-2;
+}
 
-        @keyframes twinkle {
-            from {
-                opacity: 0.2;
-                transform: scale(0.7);
-            }
+.stars{
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    pointer-events:none;
+}
 
-            to {
-                opacity: 1;
-                transform: scale(1.4);
-            }
-        }
+.star{
+    position:absolute;
+    width:3px;
+    height:3px;
+    background:white;
+    border-radius:50%;
+    animation:twinkle 2s infinite alternate;
+}
 
-        .screen {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 30px 20px;
-            position: relative;
-            z-index: 2;
-        }
+@keyframes twinkle{
+    from{opacity:.2;transform:scale(.6)}
+    to{opacity:1;transform:scale(1.5)}
+}
 
-        .content {
-            max-width: 600px;
-            width: 100%;
-        }
+section{
+    min-height:100vh;
+    padding:70px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
 
-        .small {
-            color: #e8bfff;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            font-size: 13px;
-            margin-bottom: 20px;
-        }
+.container{
+    width:100%;
+    max-width:850px;
+}
 
-        h1 {
-            font-size: clamp(42px, 12vw, 80px);
-            margin-bottom: 15px;
-            background: linear-gradient(90deg, #fff, #ffb7e8, #dba5ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+.badge{
+    color:#ffacd9;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    font-size:12px;
+    margin-bottom:20px;
+}
 
-        .subtitle {
-            font-size: 18px;
-            line-height: 1.7;
-            color: #e8ddec;
-            margin-bottom: 35px;
-        }
+h1{
+    font-size:clamp(50px,14vw,100px);
+    background:linear-gradient(90deg,#fff,#ffb1dc,#c995ff);
+    -webkit-background-clip:text;
+    color:transparent;
+    margin-bottom:15px;
+}
 
-        button {
-            border: none;
-            padding: 16px 28px;
-            border-radius: 50px;
-            font-size: 16px;
-            color: white;
-            background: linear-gradient(135deg, #ff4f9a, #9b5cff);
-            cursor: pointer;
-            box-shadow: 0 10px 30px rgba(255, 79, 154, 0.35);
-            transition: 0.3s;
-        }
+h2{
+    font-size:34px;
+    margin-bottom:25px;
+    color:#ffb4dd;
+}
 
-        button:hover {
-            transform: translateY(-3px) scale(1.03);
-        }
+p{
+    line-height:1.9;
+    color:#eadfeb;
+    font-size:18px;
+}
 
-        .hidden {
-            display: none;
-        }
+.hero-text{
+    font-size:19px;
+    margin:20px auto 35px;
+    max-width:600px;
+}
 
-        .letter {
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.15);
-            padding: 30px;
-            border-radius: 25px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            line-height: 1.9;
-            text-align: left;
-        }
+button{
+    border:none;
+    color:white;
+    padding:16px 28px;
+    border-radius:50px;
+    font-size:16px;
+    background:linear-gradient(135deg,#ff3f9f,#a14fff);
+    box-shadow:0 10px 35px rgba(255,50,160,.35);
+    cursor:pointer;
+    transition:.3s;
+}
 
-        .letter h2 {
-            text-align: center;
-            margin-bottom: 25px;
-            color: #ffb7e8;
-        }
+button:hover{
+    transform:translateY(-3px) scale(1.03);
+}
 
-        .heart {
-            font-size: 65px;
-            margin-bottom: 20px;
-            animation: heartbeat 1.3s infinite;
-        }
+.heart{
+    font-size:75px;
+    animation:beat 1.3s infinite;
+    margin-bottom:20px;
+}
 
-        @keyframes heartbeat {
-            0%, 100% {
-                transform: scale(1);
-            }
+@keyframes beat{
+    50%{transform:scale(1.18)}
+}
 
-            50% {
-                transform: scale(1.18);
-            }
-        }
+.card{
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:28px;
+    padding:35px;
+    backdrop-filter:blur(15px);
+    box-shadow:0 25px 80px rgba(0,0,0,.3);
+}
 
-        .final {
-            font-size: 22px;
-            line-height: 1.8;
-            color: #f5dff0;
-        }
+.letter{
+    text-align:left;
+}
 
-        .signature {
-            margin-top: 25px;
-            color: #ff9dd5;
-            font-size: 18px;
-        }
+.letter p{
+    margin-bottom:20px;
+}
 
-        .next {
-            margin-top: 30px;
-        }
-    </style>
+.timeline{
+    display:grid;
+    gap:18px;
+    margin-top:30px;
+}
+
+.timeline-item{
+    padding:22px;
+    border-radius:20px;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.12);
+}
+
+.timeline-item strong{
+    color:#ffacd9;
+    font-size:20px;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    margin-top:30px;
+}
+
+.photo{
+    overflow:hidden;
+    border-radius:18px;
+    border:2px solid rgba(255,255,255,.15);
+    background:#170c20;
+    transition:.4s;
+}
+
+.photo:hover{
+    transform:scale(1.03) rotate(1deg);
+}
+
+.photo img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+    display:block;
+}
+
+.photo p{
+    padding:12px;
+    font-size:14px;
+}
+
+.love-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    margin-top:30px;
+}
+
+.love-card{
+    padding:25px 15px;
+    background:rgba(255,255,255,.07);
+    border-radius:22px;
+    border:1px solid rgba(255,255,255,.12);
+    transition:.4s;
+}
+
+.love-card:hover{
+    transform:translateY(-7px);
+    background:rgba(255,255,255,.12);
+}
+
+.love-card .emoji{
+    font-size:38px;
+    margin-bottom:12px;
+}
+
+.love-card h3{
+    color:#ffb1dc;
+    margin-bottom:8px;
+}
+
+.gift{
+    font-size:100px;
+    cursor:pointer;
+    animation:float 2s infinite ease-in-out;
+    margin:20px;
+}
+
+@keyframes float{
+    50%{transform:translateY(-15px)}
+}
+
+.secret{
+    display:none;
+    margin-top:30px;
+    animation:appear 1s ease;
+}
+
+@keyframes appear{
+    from{opacity:0;transform:translateY(20px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+.final-message{
+    font-size:22px;
+    line-height:2;
+}
+
+.signature{
+    margin-top:30px;
+    color:#ffacd9;
+    font-size:21px;
+}
+
+@media(max-width:600px){
+    .gallery{
+        grid-template-columns:1fr;
+    }
+
+    .love-grid{
+        grid-template-columns:1fr;
+    }
+
+    .card{
+        padding:25px 20px;
+    }
+
+    .photo img{
+        height:280px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <div class="stars">
-        <span class="star" style="top:10%;left:15%;"></span>
-        <span class="star" style="top:20%;left:75%;"></span>
-        <span class="star" style="top:35%;left:40%;"></span>
-        <span class="star" style="top:55%;left:85%;"></span>
-        <span class="star" style="top:70%;left:20%;"></span>
-        <span class="star" style="top:82%;left:65%;"></span>
-        <span class="star" style="top:45%;left:8%;"></span>
-        <span class="star" style="top:90%;left:90%;"></span>
+<div class="stars">
+    <span class="star" style="top:8%;left:10%"></span>
+    <span class="star" style="top:17%;left:80%"></span>
+    <span class="star" style="top:30%;left:30%"></span>
+    <span class="star" style="top:45%;left:90%"></span>
+    <span class="star" style="top:60%;left:12%"></span>
+    <span class="star" style="top:75%;left:70%"></span>
+    <span class="star" style="top:88%;left:25%"></span>
+    <span class="star" style="top:93%;left:90%"></span>
+</div>
+
+
+<!-- HERO -->
+
+<section>
+<div class="container">
+
+    <div class="badge">
+        A universe made especially for
     </div>
 
+    <h1>Indira ❤️</h1>
 
-    <!-- OPENING -->
+    <p class="hero-text">
+        Today is not just your birthday.
+        <br>
+        Today is a reminder of how lucky I feel
+        to have you in my life.
+    </p>
 
-    <section class="screen" id="opening">
+    <p style="color:#ffb1dc;margin-bottom:30px;">
+        27 October ✨
+    </p>
 
-        <div class="content">
+    <button onclick="goTo('letter')">
+        Enter Your Birthday Universe 💫
+    </button>
 
-            <div class="small">
-                A little universe made for you
-            </div>
-
-            <h1>Hey, Beautiful ❤️</h1>
-
-            <p class="subtitle">
-                Today isn't just another day.<br>
-                It's the day the world became a little more beautiful.
-            </p>
-
-            <button onclick="openPortal()">
-                Enter Your Birthday Universe 💫
-            </button>
-
-        </div>
-
-    </section>
+</div>
+</section>
 
 
-    <!-- LETTER -->
+<!-- LETTER -->
 
-    <section class="screen hidden" id="letterSection">
+<section id="letter">
+<div class="container">
 
-        <div class="content">
+<div class="card letter">
 
-            <div class="letter">
+<div class="badge">A letter from Chandan</div>
 
-                <h2>💌 A Letter For You</h2>
+<h2>💌 For My Indira</h2>
 
-                <p>
-                    Happy Birthday to the most special person in my life. ❤️
-                </p>
+<p>
+Happy Birthday, Indira. ❤️
+</p>
 
-                <br>
+<p>
+Four years have passed, and somehow you still have
+the ability to make my heart feel the same kind of
+happiness that it did when you first became special to me.
+</p>
 
-                <p>
-                    I don't know if words will ever be enough to explain
-                    how much you mean to me, but today I want to try.
-                </p>
+<p>
+There are so many things I love about you.
+Your smile can make an ordinary day feel beautiful.
+Your caring nature reminds me how lucky I am.
+Your cute little anger somehow makes you even more adorable.
+And your loving nature is something I will always treasure.
+</p>
 
-                <br>
+<p>
+And then there are your eyes...
+I don't know how you do it, but sometimes just looking
+at you is enough to make everything else disappear.
+</p>
 
-                <p>
-                    You have this beautiful way of making ordinary moments
-                    feel extraordinary. Your smile, your laugh, your little
-                    habits — somehow they all became my favourite things.
-                </p>
+<p>
+You are cute, caring, loving, sometimes adorably angry,
+and completely unforgettable.
+And somewhere along these four years,
+you became much more than just someone I love.
+You became a beautiful part of my life.
+</p>
 
-                <br>
+<p>
+On your birthday, I wish you happiness that stays,
+smiles that never disappear, dreams that come true,
+and countless beautiful moments ahead.
+</p>
 
-                <p>
-                    On your birthday, I simply want you to know that
-                    you are deeply appreciated, genuinely loved,
-                    and incredibly special.
-                </p>
+<p>
+Thank you for being you, Indira.
+❤️
+</p>
 
-                <br>
+<div style="text-align:center;margin-top:30px;">
+<button onclick="goTo('journey')">
+Our 4 Year Journey 🕰️
+</button>
+</div>
 
-                <p>
-                    May this new year of your life bring you happiness,
-                    beautiful memories, endless smiles and everything
-                    your heart wishes for.
-                </p>
+</div>
 
-                <div style="text-align:center" class="next">
-
-                    <button onclick="showFinal()">
-                        One More Thing... 💗
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- FINAL -->
-
-    <section class="screen hidden" id="finalSection">
-
-        <div class="content">
-
-            <div class="heart">
-                ❤️
-            </div>
-
-            <div class="small">
-                One last secret
-            </div>
-
-            <p class="final">
-
-                If I could give you one thing today,
-                it would be the ability to see yourself
-                through my eyes.
-
-                <br><br>
-
-                Then you'd finally understand
-                just how precious you are to me.
-
-            </p>
-
-            <div class="signature">
-
-                Happy Birthday, My Love 🌹
-
-            </div>
-
-        </div>
-
-    </section>
+</div>
+</section>
 
 
-    <script>
+<!-- JOURNEY -->
 
-        function openPortal() {
+<section id="journey">
+<div class="container">
 
-            document.getElementById("opening").classList.add("hidden");
+<div class="badge">Four years of us</div>
 
-            document.getElementById("letterSection").classList.remove("hidden");
+<h2>🕰️ Our Little Journey</h2>
 
-            window.scrollTo(0, 0);
+<p>
+Four years. Countless conversations.
+Hundreds of memories.
+And one person who still makes my heart smile.
+</p>
 
-        }
+<div class="timeline">
 
-        function showFinal() {
+<div class="timeline-item">
+<strong>🌱 The Beginning</strong>
+<p>
+Somehow, two people became an important part
+of each other's lives.
+</p>
+</div>
 
-            document.getElementById("letterSection").classList.add("hidden");
+<div class="timeline-item">
+<strong>💗 Growing Together</strong>
+<p>
+The little conversations, laughs, silly moments,
+and memories slowly became something special.
+</p>
+</div>
 
-            document.getElementById("finalSection").classList.remove("hidden");
+<div class="timeline-item">
+<strong>🌙 Through Everything</strong>
+<p>
+Four years brought beautiful moments,
+challenges, laughter and countless memories.
+</p>
+</div>
 
-            window.scrollTo(0, 0);
+<div class="timeline-item">
+<strong>✨ Today</strong>
+<p>
+And here we are — still creating memories,
+with many more chapters waiting for us.
+</p>
+</div>
 
-        }
+</div>
 
-    </script>
+<div style="margin-top:30px;">
+<button onclick="goTo('memories')">
+Open Our Memories 📸
+</button>
+</div>
+
+</div>
+</section>
+
+
+<!-- MEMORIES -->
+
+<section id="memories">
+<div class="container">
+
+<div class="badge">Moments worth keeping</div>
+
+<h2>📸 Our Memories</h2>
+
+<p>
+Every picture tells a little story.
+These are some of the moments I want to keep close.
+</p>
+
+<div class="gallery">
+
+<div class="photo">
+<img src="IMG-20260926-WA0008.jpg">
+<p>One beautiful memory ❤️</p>
+</div>
+
+<div class="photo">
+<img src="IMG-20260926-WA0009.jpg">
+<p>A moment worth remembering ✨</p>
+</div>
+
+<div class="photo">
+<img src="IMG-20260926-WA0010.jpg">
+<p>Just you being you 🥰</p>
+</div>
+
+<div class="photo">
+<img src="IMG-20260926-WA0011.jpg">
+<p>A memory I treasure 💗</p>
+</div>
+
+<div class="photo">
+<img src="IMG-20260926-WA0012.jpg">
+<p>Another little chapter 🌸</p>
+</div>
+
+<div class="photo">
+<img src="IMG-20260926-WA0013.jpg">
+<p>And many more to come ❤️</p>
+</div>
+
+</div>
+
+<div style="margin-top:30px;">
+<button onclick="goTo('things')">
+Things I Love About You 💗
+</button>
+</div>
+
+</div>
+</section>
+
+
+<!-- THINGS I LOVE -->
+
+<section id="things">
+<div class="container">
+
+<div class="badge">There are so many...</div>
+
+<h2>💗 Things I Love About You</h2>
+
+<div class="love-grid">
+
+<div class="love-card">
+<div class="emoji">😊</div>
+<h3>Your Smile</h3>
+<p>
+Because your smile can instantly make my day better.
+</p>
+</div>
+
+<div class="love-card">
+<div class="emoji">🫶</div>
+<h3>Your Caring Nature</h3>
+<p>
+The way you care about people is one of the things
+that makes you so special.
+</p>
+</div>
+
+<div class="love-card">
+<div class="emoji">😤❤️</div>
+<h3>Your Anger</h3>
+<p>
+Even your cute angry moments somehow make you adorable.
+</p>
+</div>
+
+<div class="love-card">
+<div class="emoji">🥰</div>
+<h3>Your Cuteness</h3>
+<p>
+You have a way of being cute without even trying.
+</p>
+</div>
+
+<div class="love-card">
+<div class="emoji">💕</div>
+<h3>Your Loving Nature</h3>
+<p>
+Your love makes ordinary moments feel extraordinary.
+</p>
+</div>
+
+<div class="love-card">
+<div class="emoji">👀</div>
+<h3>Your Eyes</h3>
+<p>
+There is something about your eyes that I could never
+properly explain.
+</p>
+</div>
+
+</div>
+
+<div style="margin-top:35px;">
+<button onclick="goTo('surprise')">
+I Have One More Surprise 🎁
+</button>
+</div>
+
+</div>
+</section>
+
+
+<!-- SURPRISE -->
+
+<section id="surprise">
+<div class="container">
+
+<div class="badge">Don't stop here...</div>
+
+<h2>🎁 A Little Surprise</h2>
+
+<p>
+There is one last thing waiting for you.
+</p>
+
+<div class="gift" onclick="openGift()">
+🎁
+</div>
+
+<p style="color:#ffb1dc;">
+Tap the gift ❤️
+</p>
+
+<div class="secret" id="secret">
+
+<div class="heart">❤️</div>
+
+<p class="final-message">
+
+Indira,
+
+If I could give you one thing today,
+I would give you the ability to see yourself
+through my eyes.
+
+<br><br>
+
+Then you would finally understand
+how beautiful, precious and special
+you are to me.
+
+<br><br>
+
+Four years have given me countless memories,
+but I hope they are only the beginning.
+
+</p>
+
+<div class="signature">
+Happy Birthday, My Love. 🌹
+<br><br>
+— Chandan ❤️
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<script>
+
+function goTo(id){
+    document.getElementById(id).scrollIntoView({
+        behavior:"smooth"
+    });
+}
+
+function openGift(){
+
+    document.getElementById("secret").style.display="block";
+
+    document.getElementById("secret").scrollIntoView({
+        behavior:"smooth"
+    });
+
+    createHearts();
+}
+
+function createHearts(){
+
+    for(let i=0;i<20;i++){
+
+        const heart=document.createElement("div");
+
+        heart.innerHTML="❤️";
+
+        heart.style.position="fixed";
+        heart.style.left=Math.random()*100+"vw";
+        heart.style.bottom="-30px";
+        heart.style.fontSize=(15+Math.random()*25)+"px";
+        heart.style.zIndex="9999";
+        heart.style.pointerEvents="none";
+        heart.style.transition="transform 4s linear, opacity 4s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(()=>{
+
+            heart.style.transform=
+                "translateY(-110vh) rotate("+
+                (Math.random()*360)+
+                "deg)";
+
+            heart.style.opacity="0";
+
+        },100);
+
+        setTimeout(()=>{
+            heart.remove();
+        },4200);
+    }
+}
+
+</script>
 
 </body>
-  </html>
+    </html>
+                
