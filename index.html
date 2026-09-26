@@ -179,11 +179,9 @@ h2{
 
 .photo img{
     width:100%;
-    height:auto;
-    max-height:600px;
-    object-fit:contain;
+    height:240px;
+    object-fit:cover;
     display:block;
-    background:#170c20;
 }
 
 .photo p{
@@ -241,8 +239,14 @@ h2{
 }
 
 @keyframes fade{
-    from{opacity:0;transform:translateY(20px);}
-    to{opacity:1;transform:translateY(0);}
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 .heart{
@@ -269,10 +273,14 @@ footer{
     opacity:.6;
 }
 
-@media(max-width:700px){
+@media(max-width:600px){
 
     .timeline{
         grid-template-columns:repeat(2,1fr);
+    }
+
+    .gallery{
+        grid-template-columns:1fr;
     }
 
     .love-grid{
@@ -283,22 +291,8 @@ footer{
         padding:25px 20px;
     }
 
-    .gallery{
-        grid-template-columns:1fr;
-    }
-
     .photo img{
-        height:auto;
-        max-height:600px;
-        object-fit:contain;
-    }
-
-}
-
-@media(max-width:400px){
-
-    .timeline{
-        grid-template-columns:1fr;
+        height:280px;
     }
 
 }
