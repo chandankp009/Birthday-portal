@@ -146,6 +146,128 @@ button:hover{
 .letter p{
     margin-bottom:20px;
 }
+/* 💌 INTERACTIVE BIRTHDAY LETTER */
+
+.letter-envelope{
+    position:relative;
+    overflow:hidden;
+    border-radius:22px;
+    background:linear-gradient(145deg,#351044,#18091f);
+    border:1px solid rgba(255,255,255,.15);
+    padding:45px 25px;
+    text-align:center;
+    box-shadow:0 20px 60px rgba(0,0,0,.4);
+}
+
+.envelope-icon{
+    font-size:85px;
+    margin-bottom:20px;
+    animation:envelopeFloat 2s ease-in-out infinite;
+}
+
+@keyframes envelopeFloat{
+    50%{
+        transform:translateY(-8px);
+    }
+}
+
+.envelope-title{
+    color:#ffb4dd;
+    font-size:27px;
+    margin-bottom:10px;
+}
+
+.envelope-text{
+    color:#eadfeb;
+    font-size:16px;
+    margin-bottom:25px;
+}
+
+/* SWITCH */
+
+.unlock-switch{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    cursor:pointer;
+    user-select:none;
+}
+
+.unlock-switch input{
+    display:none;
+}
+
+.switch-track{
+    width:62px;
+    height:34px;
+    border-radius:30px;
+    background:#3a2942;
+    border:1px solid rgba(255,255,255,.2);
+    position:relative;
+    transition:.4s;
+}
+
+.switch-track:before{
+    content:"";
+    position:absolute;
+    width:26px;
+    height:26px;
+    left:3px;
+    top:3px;
+    border-radius:50%;
+    background:white;
+    transition:.4s;
+    box-shadow:0 0 12px rgba(255,255,255,.5);
+}
+
+.unlock-switch input:checked + .switch-track{
+    background:linear-gradient(90deg,#ff3f9f,#a14fff);
+}
+
+.unlock-switch input:checked + .switch-track:before{
+    transform:translateX(28px);
+}
+
+.switch-label{
+    color:#ffb1dc;
+    font-size:15px;
+}
+
+/* LETTER CONTENT */
+
+.real-letter{
+    display:none;
+    animation:letterOpen 1.2s ease forwards;
+}
+
+.real-letter.open{
+    display:block;
+}
+
+@keyframes letterOpen{
+    from{
+        opacity:0;
+        transform:translateY(25px) scale(.97);
+        filter:blur(8px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+        filter:blur(0);
+    }
+}
+
+.envelope-closed{
+    animation:envelopeClose .5s ease forwards;
+}
+
+@keyframes envelopeClose{
+    to{
+        opacity:0;
+        transform:scale(.92);
+        filter:blur(5px);
+    }
+    }
 
 .timeline{
     display:grid;
@@ -331,10 +453,43 @@ button:hover{
 
 <!-- LETTER -->
 
+<!-- LETTER -->
+
 <section id="letter">
 <div class="container">
 
-<div class="card letter">
+<!-- CLOSED ENVELOPE -->
+
+<div class="card letter-envelope" id="closedEnvelope">
+
+    <div class="envelope-icon">💌</div>
+
+    <div class="envelope-title">
+        A Birthday Letter For You
+    </div>
+
+    <p class="envelope-text">
+        There is something special waiting inside...
+    </p>
+
+    <label class="unlock-switch">
+
+        <input type="checkbox" id="unlockLetter">
+
+        <span class="switch-track"></span>
+
+        <span class="switch-label">
+            🔓 Unlock My Letter
+        </span>
+
+    </label>
+
+</div>
+
+
+<!-- YOUR EXISTING LETTER -->
+
+<div class="card letter real-letter" id="realLetter">
 
 <div class="badge">A letter from Chandan</div>
 
@@ -755,6 +910,29 @@ function createHearts(){
         },4200);
     }
 }
+/* 💌 LETTER UNLOCK */
+
+const unlockLetter = document.getElementById("unlockLetter");
+const closedEnvelope = document.getElementById("closedEnvelope");
+const realLetter = document.getElementById("realLetter");
+
+unlockLetter.addEventListener("change", function(){
+
+    if(this.checked){
+
+        closedEnvelope.classList.add("envelope-closed");
+
+        setTimeout(() => {
+
+            closedEnvelope.style.display = "none";
+
+            realLetter.classList.add("open");
+
+        },500);
+
+    }
+
+});
 
 </script>
 
