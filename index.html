@@ -4,13 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Happy Birthday Indira ❤️</title>
+<title>For Indira ❤️</title>
 
 <style>
+
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -19,12 +20,15 @@ html {
 
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #fff0f5, #ffe4ec);
-    color: #5a3040;
-    line-height: 1.6;
+    background: #09060d;
+    color: #fff;
+    overflow-x: hidden;
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
+
 .hero {
     min-height: 100vh;
     display: flex;
@@ -32,65 +36,142 @@ body {
     align-items: center;
     text-align: center;
     padding: 30px 20px;
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 20% 30%, rgba(255, 0, 128, 0.22), transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(128, 0, 255, 0.22), transparent 30%),
+        #09060d;
+}
+
+.hero::before,
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.5;
+}
+
+.hero::before {
+    background: #ff1493;
+    top: -100px;
+    left: -100px;
+}
+
+.hero::after {
+    background: #7b2cff;
+    bottom: -100px;
+    right: -100px;
 }
 
 .hero-content {
-    max-width: 800px;
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
 }
 
 .badge {
     display: inline-block;
-    background: rgba(255,255,255,0.85);
-    color: #d94f70;
-    padding: 10px 22px;
+    padding: 9px 20px;
+    border: 1px solid rgba(255,255,255,0.2);
     border-radius: 30px;
-    font-size: 14px;
-    margin-bottom: 20px;
+    background: rgba(255,255,255,0.06);
+    backdrop-filter: blur(10px);
+    color: #ff8fca;
+    margin-bottom: 25px;
 }
 
 .hero h1 {
-    font-size: 52px;
-    color: white;
-    margin-bottom: 15px;
+    font-size: clamp(48px, 10vw, 90px);
+    line-height: 1;
+    margin-bottom: 20px;
+
+    background: linear-gradient(
+        90deg,
+        #ff6bb5,
+        #ffffff,
+        #c77dff
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .hero h2 {
-    font-size: 28px;
-    color: #fff;
+    font-size: clamp(25px, 5vw, 42px);
     margin-bottom: 20px;
+    color: #fff;
 }
 
 .hero p {
-    font-size: 19px;
-    color: white;
     max-width: 650px;
     margin: auto;
+    color: #c9c2d0;
+    font-size: 18px;
 }
 
-/* SECTIONS */
+.scroll-button {
+    display: inline-block;
+    margin-top: 35px;
+    padding: 14px 28px;
+    border-radius: 40px;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(90deg, #ff3f9f, #8b45ff);
+    box-shadow: 0 0 30px rgba(255, 63, 159, 0.35);
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
 section {
-    padding: 70px 20px;
+    padding: 90px 20px;
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 1050px;
     margin: auto;
 }
 
 .section-title {
     text-align: center;
-    font-size: 32px;
-    color: #c94f70;
-    margin-bottom: 40px;
+    font-size: clamp(30px, 5vw, 45px);
+    margin-bottom: 45px;
+
+    background: linear-gradient(
+        90deg,
+        #ff71bd,
+        #ffffff,
+        #b77aff
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-/* LETTER */
+/* =========================
+   LETTER
+========================= */
+
 .letter {
-    background: white;
-    padding: 35px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(200, 80, 110, 0.15);
+    padding: 40px;
+    border-radius: 25px;
+
+    background: rgba(255,255,255,0.045);
+    border: 1px solid rgba(255,255,255,0.1);
+
+    box-shadow:
+        0 20px 70px rgba(0,0,0,0.45),
+        0 0 40px rgba(190,40,150,0.08);
+
+    backdrop-filter: blur(15px);
+
+    color: #d5ceda;
     font-size: 18px;
     line-height: 1.9;
 }
@@ -101,62 +182,108 @@ section {
 
 .signature {
     text-align: right;
-    color: #d94f70;
-    font-weight: bold;
+    color: #ff77bd;
     font-size: 20px;
+    font-weight: bold;
 }
 
-/* TIMELINE */
+/* =========================
+   TIMELINE
+========================= */
+
 .timeline {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: 18px;
 }
 
 .timeline-card {
-    background: white;
-    padding: 25px 15px;
+    padding: 28px 18px;
     text-align: center;
-    border-radius: 18px;
-    box-shadow: 0 8px 25px rgba(200, 80, 110, 0.12);
+
+    background: rgba(255,255,255,0.045);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 20px;
+
+    backdrop-filter: blur(10px);
+
+    transition: 0.3s;
 }
 
-.timeline-card .number {
-    font-size: 32px;
-    color: #e76f8a;
+.timeline-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(255,100,190,0.5);
+    box-shadow: 0 10px 35px rgba(255,40,150,0.15);
+}
+
+.number {
+    font-size: 38px;
     font-weight: bold;
-    margin-bottom: 10px;
+    color: #ff65b5;
+    margin-bottom: 12px;
 }
 
 .timeline-card h3 {
-    color: #c94f70;
-    margin-bottom: 8px;
+    color: white;
+    margin-bottom: 10px;
 }
 
-/* GALLERY */
+.timeline-card p {
+    color: #aaa2b0;
+}
+
+/* =========================
+   GALLERY
+========================= */
+
 .gallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 25px;
 }
 
 .photo {
-    background: white;
-    padding: 10px;
-    border-radius: 18px;
-    box-shadow: 0 8px 25px rgba(200, 80, 110, 0.15);
+    position: relative;
     overflow: hidden;
+    border-radius: 22px;
+
+    background: #120d18;
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,0.5);
+
+    cursor: pointer;
+
+    transition: 0.4s;
+}
+
+.photo:hover {
+    transform: translateY(-7px);
+    border-color: rgba(255,100,190,0.5);
+    box-shadow:
+        0 20px 60px rgba(255,30,160,0.18);
 }
 
 .photo img {
     width: 100%;
-    height: 400px;
+    height: 430px;
     display: block;
+
     object-fit: cover;
-    border-radius: 12px;
+
+    transition: transform 0.5s;
 }
 
-/* LOVE CARDS */
+.photo:hover img {
+    transform: scale(1.04);
+}
+
+/* =========================
+   LOVE CARDS
+========================= */
+
 .love-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -164,89 +291,225 @@ section {
 }
 
 .love-card {
-    background: white;
-    padding: 25px 18px;
+    padding: 30px 20px;
     text-align: center;
-    border-radius: 18px;
-    box-shadow: 0 8px 25px rgba(200, 80, 110, 0.12);
+
+    background: rgba(255,255,255,0.045);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 20px;
+
+    transition: 0.3s;
 }
 
-.love-card .heart {
-    font-size: 35px;
-    margin-bottom: 10px;
+.love-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255,100,190,0.45);
+}
+
+.heart {
+    font-size: 40px;
+    margin-bottom: 12px;
 }
 
 .love-card h3 {
-    color: #c94f70;
-    margin-bottom: 8px;
+    color: #ff75bd;
+    margin-bottom: 10px;
 }
 
-/* SURPRISE */
+.love-card p {
+    color: #aaa2b0;
+}
+
+/* =========================
+   SURPRISE
+========================= */
+
 .surprise {
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
     text-align: center;
-    color: white;
-    border-radius: 25px;
-    padding: 60px 25px;
+    padding: 70px 30px;
+
+    border-radius: 30px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,40,160,0.2),
+            transparent 65%
+        ),
+
+        rgba(255,255,255,0.04);
+
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
 .surprise h2 {
-    font-size: 35px;
+    font-size: 40px;
     margin-bottom: 20px;
+
+    color: #ff75bd;
 }
 
 .surprise p {
-    font-size: 19px;
-    max-width: 700px;
+    max-width: 720px;
     margin: auto;
+    color: #d1c8d5;
+    font-size: 18px;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
+
 footer {
     text-align: center;
-    padding: 30px 20px;
-    background: #fff;
-    color: #c94f70;
-    font-size: 15px;
+    padding: 35px 20px;
+
+    border-top: 1px solid rgba(255,255,255,0.08);
+
+    color: #8e8494;
 }
 
-/* BUTTON */
-.scroll-button {
-    display: inline-block;
-    margin-top: 30px;
-    background: white;
-    color: #d94f70;
-    padding: 12px 25px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
+/* =========================
+   LIGHTBOX
+========================= */
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,0.94);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+
+    padding: 20px;
 }
 
-/* MOBILE */
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-content {
+    position: relative;
+
+    width: 100%;
+    max-width: 1000px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox img {
+    max-width: 90vw;
+    max-height: 85vh;
+
+    object-fit: contain;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 0 60px rgba(255,50,170,0.2);
+}
+
+.close {
+    position: fixed;
+    top: 20px;
+    right: 25px;
+
+    font-size: 38px;
+    color: white;
+
+    cursor: pointer;
+
+    z-index: 10001;
+}
+
+.prev,
+.next {
+    position: fixed;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    background: rgba(255,255,255,0.08);
+
+    color: white;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(10px);
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+.counter {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: #ddd;
+    font-size: 14px;
+}
+
+/* DOTS */
+
+.dots {
+    position: fixed;
+    bottom: 55px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 7px;
+}
+
+.dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #555;
+}
+
+.dot.active {
+    background: #ff69b4;
+    box-shadow: 0 0 10px #ff69b4;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
 @media (max-width: 700px) {
 
-    .hero {
-        min-height: 90vh;
-    }
-
-    .hero h1 {
-        font-size: 38px;
-    }
-
-    .hero h2 {
-        font-size: 23px;
-    }
-
-    .hero p {
-        font-size: 17px;
-    }
-
     section {
-        padding: 50px 15px;
-    }
-
-    .section-title {
-        font-size: 27px;
+        padding: 65px 15px;
     }
 
     .letter {
@@ -264,25 +527,47 @@ footer {
 
     .photo img {
         height: auto;
-        max-height: 600px;
+        max-height: 650px;
         object-fit: contain;
-        background: #f5e9ee;
+        background: #120d18;
     }
 
     .love-grid {
         grid-template-columns: 1fr;
     }
 
-    .surprise h2 {
-        font-size: 28px;
+    .prev,
+    .next {
+        width: 42px;
+        height: 42px;
+        font-size: 20px;
     }
+
+    .prev {
+        left: 10px;
+    }
+
+    .next {
+        right: 10px;
+    }
+
+    .lightbox img {
+        max-width: 92vw;
+        max-height: 78vh;
+    }
+
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
+
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero">
 
     <div class="hero-content">
@@ -296,8 +581,8 @@ footer {
         <h2>My Beautiful Indira</h2>
 
         <p>
-            Today is all about celebrating the most special person
-            in my life. You make my world brighter just by being in it.
+            Four years of memories, smiles, little fights,
+            endless love and countless beautiful moments.
         </p>
 
         <a href="#letter" class="scroll-button">
@@ -309,7 +594,10 @@ footer {
 </section>
 
 
-<!-- LETTER -->
+<!-- =========================
+     LETTER
+========================= -->
+
 <section id="letter">
 
     <div class="container">
@@ -325,8 +613,8 @@ footer {
             </p>
 
             <p>
-                Happy Birthday to the most beautiful and special person
-                in my life. ❤️
+                Happy Birthday to the most beautiful and special
+                person in my life. ❤️
             </p>
 
             <p>
@@ -337,29 +625,33 @@ footer {
 
             <p>
                 Your smile can instantly make my day better.
-                Your caring nature makes me feel lucky to have you.
-                Even your anger is cute to me sometimes. 😅❤️
+                Your caring nature makes me feel incredibly lucky
+                to have you in my life.
             </p>
 
             <p>
-                I love your cuteness, your loving nature and especially
-                those beautiful eyes that I could look at forever.
+                I love your cuteness, your loving nature,
+                your beautiful eyes and yes...
+                even your anger sometimes. 😅❤️
             </p>
 
             <p>
-                I don't know what the future will bring,
-                but I know that every memory with you will always
-                have a special place in my heart.
+                Every moment with you has become a memory that
+                I will always keep close to my heart.
             </p>
 
             <p>
-                I hope this birthday brings you everything you deserve:
-                happiness, success, love and lots of beautiful moments.
+                On your birthday, I just want you to know how
+                special you are to me.
             </p>
 
             <p>
-                Keep smiling, keep being the amazing person you are,
-                and never forget how special you are to me. ❤️
+                Keep smiling, keep being yourself and never forget
+                how much you mean to me.
+            </p>
+
+            <p>
+                Happy Birthday, Indira. ❤️
             </p>
 
             <p class="signature">
@@ -374,47 +666,77 @@ footer {
 </section>
 
 
-<!-- 4 YEARS -->
+<!-- =========================
+     FOUR YEARS
+========================= -->
+
 <section>
 
     <div class="container">
 
         <h2 class="section-title">
-            ❤️ 4 Beautiful Years
+            ❤️ Four Beautiful Years
         </h2>
 
         <div class="timeline">
 
             <div class="timeline-card">
-                <div class="number">01</div>
+
+                <div class="number">
+                    01
+                </div>
+
                 <h3>First Year</h3>
+
                 <p>
-                    The beginning of our beautiful journey.
+                    The beginning of something beautiful.
                 </p>
+
             </div>
 
+
             <div class="timeline-card">
-                <div class="number">02</div>
+
+                <div class="number">
+                    02
+                </div>
+
                 <h3>Second Year</h3>
+
                 <p>
-                    More memories, more smiles and more moments together.
+                    More smiles, memories and moments together.
                 </p>
+
             </div>
 
+
             <div class="timeline-card">
-                <div class="number">03</div>
+
+                <div class="number">
+                    03
+                </div>
+
                 <h3>Third Year</h3>
+
                 <p>
                     Growing together and creating unforgettable memories.
                 </p>
+
             </div>
 
+
             <div class="timeline-card">
-                <div class="number">04</div>
+
+                <div class="number">
+                    04
+                </div>
+
                 <h3>Fourth Year</h3>
+
                 <p>
-                    Four years later, and you are still my favourite person.
+                    Four years later and you're still my favourite person.
                 </p>
+
             </div>
 
         </div>
@@ -424,59 +746,62 @@ footer {
 </section>
 
 
-<!-- PHOTOS -->
+<!-- =========================
+     GALLERY
+========================= -->
+
 <section>
 
     <div class="container">
 
         <h2 class="section-title">
-            📸 Our Beautiful Memories
+            📸 Our Memories
         </h2>
 
         <div class="gallery">
 
-            <div class="photo">
-                <img src="1000428760-10mb.jpg" alt="Our memory">
+            <div class="photo" onclick="openLightbox(0)">
+                <img src="1000428760-10mb.jpg" alt="Memory">
             </div>
 
-            <div class="photo">
-                <img src="1000428793-10mb.jpg" alt="Our memory">
+            <div class="photo" onclick="openLightbox(1)">
+                <img src="1000428793-10mb.jpg" alt="Memory">
             </div>
 
-            <div class="photo">
-                <img src="IMG-20260926-WA0008.jpg" alt="Our memory">
+            <div class="photo" onclick="openLightbox(2)">
+                <img src="IMG-20260926-WA0008.jpg" alt="Memory">
             </div>
 
-            <div class="photo">
-                <img src="IMG-20260926-WA0009.jpg" alt="Our memory">
+            <div class="photo" onclick="openLightbox(3)">
+                <img src="IMG-20260926-WA0009.jpg" alt="Memory">
             </div>
 
-            <div class="photo">
-                <img src="IMG-20260926-WA0010.jpg" alt="Our memory">
+            <div class="photo" onclick="openLightbox(4)">
+                <img src="IMG-20260926-WA0010.jpg" alt="Memory">
             </div>
 
-            <div class="photo">
-                <img src="IMG-20260926-WA0011.jpg" alt="Our memory">
+            <div class="photo" onclick="openLightbox(5)">
+                <img src="IMG-20260926-WA0011.jpg" alt="Memory">
             </div>
 
-            <div class="photo">
-                <img src="IMG-20260926-WA0012.jpg" alt="Our memory">
+            <div class="photo" onclick="openLightbox(6)">
+                <img src="IMG-20260926-WA0012.jpg" alt="Memory">
             </div>
 
-            <div class="photo">
-                <img src="IMG-20260926-WA0013.jpg" alt="Our memory">
+            <div class="photo" onclick="openLightbox(7)">
+                <img src="IMG-20260926-WA0013.jpg" alt="Memory">
             </div>
 
-            <div class="photo">
-                <img src="IMG20240919191729.jpg" alt="Our memory">
+            <div class="photo" onclick="openLightbox(8)">
+                <img src="IMG20240919191729.jpg" alt="Memory">
             </div>
 
-            <div class="photo">
-                <img src="IMG_20230929_061111_436.jpg" alt="Our memory">
+            <div class="photo" onclick="openLightbox(9)">
+                <img src="IMG_20230929_061111_436.jpg" alt="Memory">
             </div>
 
-            <div class="photo">
-                <img src="IMG_20260926_085112_362.jpg" alt="Our memory">
+            <div class="photo" onclick="openLightbox(10)">
+                <img src="IMG_20260926_085112_362.jpg" alt="Memory">
             </div>
 
         </div>
@@ -486,7 +811,10 @@ footer {
 </section>
 
 
-<!-- THINGS I LOVE -->
+<!-- =========================
+     THINGS I LOVE
+========================= -->
+
 <section>
 
     <div class="container">
@@ -501,7 +829,7 @@ footer {
                 <div class="heart">😊</div>
                 <h3>Your Smile</h3>
                 <p>
-                    Your smile can make even my worst day better.
+                    Your smile can make my entire day better.
                 </p>
             </div>
 
@@ -509,7 +837,7 @@ footer {
                 <div class="heart">🤗</div>
                 <h3>Your Caring Nature</h3>
                 <p>
-                    The way you care about people makes you incredibly special.
+                    The way you care makes you incredibly special.
                 </p>
             </div>
 
@@ -517,7 +845,7 @@ footer {
                 <div class="heart">😤</div>
                 <h3>Your Anger</h3>
                 <p>
-                    Even when you're angry, somehow you still look cute.
+                    Even your angry moments somehow look cute.
                 </p>
             </div>
 
@@ -525,7 +853,7 @@ footer {
                 <div class="heart">🥰</div>
                 <h3>Your Cuteness</h3>
                 <p>
-                    There is something about your cuteness that I absolutely love.
+                    Your cuteness is impossible not to love.
                 </p>
             </div>
 
@@ -533,7 +861,7 @@ footer {
                 <div class="heart">❤️</div>
                 <h3>Your Loving Nature</h3>
                 <p>
-                    Your love makes every moment feel more meaningful.
+                    Your love makes everything feel more meaningful.
                 </p>
             </div>
 
@@ -552,7 +880,10 @@ footer {
 </section>
 
 
-<!-- SURPRISE -->
+<!-- =========================
+     SURPRISE
+========================= -->
+
 <section>
 
     <div class="container">
@@ -565,13 +896,17 @@ footer {
 
             <p>
                 If I could give you one thing for your birthday,
-                I would give you the ability to see yourself through
-                my eyes — so you could see just how beautiful,
-                special and important you really are to me. ❤️
+                I would give you the ability to see yourself
+                through my eyes...
             </p>
 
             <p style="margin-top:20px;">
-                Happy Birthday once again, Indira. 🎂❤️
+                So you could see just how beautiful,
+                special and important you really are to me. ❤️
+            </p>
+
+            <p style="margin-top:25px;">
+                Happy Birthday, Indira. 🎂❤️
             </p>
 
         </div>
@@ -581,7 +916,6 @@ footer {
 </section>
 
 
-<!-- FOOTER -->
 <footer>
 
     Made with ❤️ for Indira
@@ -592,5 +926,197 @@ footer {
 
 </footer>
 
-</body>
-</html>
+
+<!-- =========================
+     LIGHTBOX
+========================= -->
+
+<div class="lightbox" id="lightbox">
+
+    <span class="close" onclick="closeLightbox()">
+        ×
+    </span>
+
+    <button class="prev" onclick="changePhoto(-1)">
+        ‹
+    </button>
+
+    <div class="lightbox-content">
+
+        <img id="lightboxImage" src="" alt="Memory">
+
+    </div>
+
+    <button class="next" onclick="changePhoto(1)">
+        ›
+    </button>
+
+    <div class="dots" id="dots"></div>
+
+    <div class="counter" id="counter">
+        1 / 11
+    </div>
+
+</div>
+
+
+<script>
+
+const photos = [
+    "1000428760-10mb.jpg",
+    "1000428793-10mb.jpg",
+    "IMG-20260926-WA0008.jpg",
+    "IMG-20260926-WA0009.jpg",
+    "IMG-20260926-WA0010.jpg",
+    "IMG-20260926-WA0011.jpg",
+    "IMG-20260926-WA0012.jpg",
+    "IMG-20260926-WA0013.jpg",
+    "IMG20240919191729.jpg",
+    "IMG_20230929_061111_436.jpg",
+    "IMG_20260926_085112_362.jpg"
+];
+
+let currentPhoto = 0;
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const counter = document.getElementById("counter");
+const dotsContainer = document.getElementById("dots");
+
+
+/* CREATE DOTS */
+
+photos.forEach((photo, index) => {
+
+    const dot = document.createElement("div");
+
+    dot.className = "dot";
+
+    dot.onclick = () => {
+        currentPhoto = index;
+        updateLightbox();
+    };
+
+    dotsContainer.appendChild(dot);
+
+});
+
+
+/* OPEN */
+
+function openLightbox(index) {
+
+    currentPhoto = index;
+
+    updateLightbox();
+
+    lightbox.classList.add("active");
+
+    document.body.style.overflow = "hidden";
+}
+
+
+/* CLOSE */
+
+function closeLightbox() {
+
+    lightbox.classList.remove("active");
+
+    document.body.style.overflow = "auto";
+}
+
+
+/* UPDATE */
+
+function updateLightbox() {
+
+    lightboxImage.src = photos[currentPhoto];
+
+    counter.textContent =
+        (currentPhoto + 1) + " / " + photos.length;
+
+    document.querySelectorAll(".dot").forEach((dot, index) => {
+
+        dot.classList.toggle(
+            "active",
+            index === currentPhoto
+        );
+
+    });
+
+}
+
+
+/* NEXT / PREVIOUS */
+
+function changePhoto(direction) {
+
+    currentPhoto += direction;
+
+    if (currentPhoto < 0) {
+        currentPhoto = photos.length - 1;
+    }
+
+    if (currentPhoto >= photos.length) {
+        currentPhoto = 0;
+    }
+
+    updateLightbox();
+}
+
+
+/* KEYBOARD */
+
+document.addEventListener("keydown", function(event) {
+
+    if (!lightbox.classList.contains("active")) {
+        return;
+    }
+
+    if (event.key === "ArrowRight") {
+        changePhoto(1);
+    }
+
+    if (event.key === "ArrowLeft") {
+        changePhoto(-1);
+    }
+
+    if (event.key === "Escape") {
+        closeLightbox();
+    }
+
+});
+
+
+/* CLICK OUTSIDE IMAGE */
+
+lightbox.addEventListener("click", function(event) {
+
+    if (event.target === lightbox) {
+        closeLightbox();
+    }
+
+});
+
+
+/* SWIPE */
+
+let touchStartX = 0;
+
+lightbox.addEventListener("touchstart", function(event) {
+
+    touchStartX = event.touches[0].clientX;
+
+});
+
+
+lightbox.addEventListener("touchend", function(event) {
+
+    const touchEndX = event.changedTouches[0].clientX;
+
+    const difference = touchStartX - touchEndX;
+
+    if (Math.abs(difference) > 50) {
+
+        if (difference > 0) {
+            changeP
