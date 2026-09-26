@@ -306,6 +306,18 @@ button:hover{
         transform:translateY(0);
     }
     }
+    /* SMOOTH SECTION REVEAL */
+
+section{
+    opacity:0;
+    transform:translateY(30px);
+    transition:opacity .8s ease, transform .8s ease;
+}
+
+section.show{
+    opacity:1;
+    transform:translateY(0);
+}
     /* FULLSCREEN PHOTO VIEWER */
 
 .lightbox{
@@ -920,6 +932,23 @@ document.addEventListener("keydown",(e)=>{
     if(e.key === "Escape"){
         closeLightbox();
     }
+});
+    /* SMOOTH SECTION REVEAL */
+
+const sections = document.querySelectorAll("section");
+
+const sectionObserver = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+},{
+    threshold:0.15
+});
+
+sections.forEach(section=>{
+    sectionObserver.observe(section);
 });
 
 </script>
