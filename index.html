@@ -282,6 +282,30 @@ button:hover{
     object-fit:contain;
     }
 }
+    .photo{
+    opacity:0;
+    transform:translateY(30px);
+    animation:photoReveal .8s ease forwards;
+}
+
+.photo:nth-child(1){animation-delay:.05s;}
+.photo:nth-child(2){animation-delay:.10s;}
+.photo:nth-child(3){animation-delay:.15s;}
+.photo:nth-child(4){animation-delay:.20s;}
+.photo:nth-child(5){animation-delay:.25s;}
+.photo:nth-child(6){animation-delay:.30s;}
+.photo:nth-child(7){animation-delay:.35s;}
+.photo:nth-child(8){animation-delay:.40s;}
+.photo:nth-child(9){animation-delay:.45s;}
+.photo:nth-child(10){animation-delay:.50s;}
+.photo:nth-child(11){animation-delay:.55s;}
+
+@keyframes photoReveal{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+    }
 </style>
 </head>
 
