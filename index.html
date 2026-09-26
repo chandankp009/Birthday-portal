@@ -7,11 +7,10 @@
 <title>For Indira ❤️</title>
 
 <style>
-
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
+    box-sizing:border-box;
 }
 
 html{
@@ -19,7 +18,7 @@ html{
 }
 
 body{
-    font-family:Arial,sans-serif;
+    font-family:Arial, sans-serif;
     background:#08030d;
     color:white;
     overflow-x:hidden;
@@ -36,127 +35,137 @@ body:before{
     z-index:-2;
 }
 
-body:after{
-    content:"";
+.stars{
     position:fixed;
     inset:0;
-    background-image:
-        radial-gradient(white 1px,transparent 1px),
-        radial-gradient(white 1px,transparent 1px);
-    background-size:100px 100px,150px 150px;
-    background-position:0 0,50px 50px;
-    opacity:.15;
     z-index:-1;
-    animation:stars 20s linear infinite;
+    pointer-events:none;
 }
 
-@keyframes stars{
-    from{transform:translateY(0);}
-    to{transform:translateY(-100px);}
+.star{
+    position:absolute;
+    width:3px;
+    height:3px;
+    background:white;
+    border-radius:50%;
+    animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+    from{opacity:.2;transform:scale(.6)}
+    to{opacity:1;transform:scale(1.5)}
 }
 
 section{
-    max-width:1000px;
-    margin:auto;
-    padding:80px 20px;
-}
-
-.hero{
     min-height:100vh;
+    padding:70px 20px;
     display:flex;
-    flex-direction:column;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
     text-align:center;
 }
 
-.hero h1{
-    font-size:clamp(50px,12vw,100px);
-    background:linear-gradient(90deg,#ff7eb3,#ff758c,#c77dff);
+.container{
+    width:100%;
+    max-width:850px;
+}
+
+.badge{
+    color:#ffacd9;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    font-size:12px;
+    margin-bottom:20px;
+}
+
+h1{
+    font-size:clamp(50px,14vw,100px);
+    background:linear-gradient(90deg,#fff,#ffb1dc,#c995ff);
     -webkit-background-clip:text;
     color:transparent;
-    animation:glow 3s infinite alternate;
+    margin-bottom:15px;
 }
 
-@keyframes glow{
-    from{filter:drop-shadow(0 0 5px #ff4f9a);}
-    to{filter:drop-shadow(0 0 25px #ff4f9a);}
+h2{
+    font-size:34px;
+    margin-bottom:25px;
+    color:#ffb4dd;
 }
 
-.hero p{
-    margin-top:15px;
-    font-size:20px;
-    opacity:.8;
+p{
+    line-height:1.9;
+    color:#eadfeb;
+    font-size:18px;
 }
 
-.hero button{
-    margin-top:35px;
-    padding:15px 28px;
+.hero-text{
+    font-size:19px;
+    margin:20px auto 35px;
+    max-width:600px;
+}
+
+button{
     border:none;
-    border-radius:30px;
-    background:linear-gradient(90deg,#ff4f9a,#a855f7);
     color:white;
+    padding:16px 28px;
+    border-radius:50px;
     font-size:16px;
+    background:linear-gradient(135deg,#ff3f9f,#a14fff);
+    box-shadow:0 10px 35px rgba(255,50,160,.35);
     cursor:pointer;
-    box-shadow:0 0 25px rgba(255,79,154,.5);
     transition:.3s;
 }
 
-.hero button:hover{
-    transform:scale(1.08);
+button:hover{
+    transform:translateY(-3px) scale(1.03);
+}
+
+.heart{
+    font-size:75px;
+    animation:beat 1.3s infinite;
+    margin-bottom:20px;
+}
+
+@keyframes beat{
+    50%{transform:scale(1.18)}
 }
 
 .card{
     background:rgba(255,255,255,.07);
-    border:1px solid rgba(255,255,255,.12);
-    backdrop-filter:blur(15px);
-    border-radius:25px;
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:28px;
     padding:35px;
-    box-shadow:0 15px 50px rgba(0,0,0,.35);
-}
-
-h2{
-    text-align:center;
-    margin-bottom:30px;
-    font-size:35px;
-    background:linear-gradient(90deg,#ff9acb,#c084fc);
-    -webkit-background-clip:text;
-    color:transparent;
+    backdrop-filter:blur(15px);
+    box-shadow:0 25px 80px rgba(0,0,0,.3);
 }
 
 .letter{
-    line-height:1.8;
-    font-size:17px;
+    text-align:left;
 }
 
-.letter strong{
-    color:#ff8fbc;
+.letter p{
+    margin-bottom:20px;
 }
 
 .timeline{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
+    gap:18px;
+    margin-top:30px;
 }
 
-.year{
-    padding:25px 15px;
-    background:rgba(255,255,255,.06);
+.timeline-item{
+    padding:22px;
     border-radius:20px;
-    text-align:center;
-    border:1px solid rgba(255,255,255,.1);
-    transition:.3s;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.12);
 }
 
-.year:hover{
-    transform:translateY(-8px);
-    background:rgba(255,255,255,.1);
+.timeline-item strong{
+    color:#ffacd9;
+    font-size:20px;
 }
 
-.year h3{
-    color:#ff86bb;
-    margin-bottom:10px;
-}
+/* MEMORIES */
 
 .gallery{
     display:grid;
@@ -191,94 +200,68 @@ h2{
 
 .love-grid{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(2,1fr);
     gap:15px;
+    margin-top:30px;
 }
 
-.love{
-    padding:25px;
-    text-align:center;
-    border-radius:20px;
-    background:rgba(255,255,255,.06);
-    border:1px solid rgba(255,255,255,.1);
-    transition:.3s;
+.love-card{
+    padding:25px 15px;
+    background:rgba(255,255,255,.07);
+    border-radius:22px;
+    border:1px solid rgba(255,255,255,.12);
+    transition:.4s;
 }
 
-.love:hover{
-    transform:translateY(-8px);
+.love-card:hover{
+    transform:translateY(-7px);
+    background:rgba(255,255,255,.12);
 }
 
-.love span{
-    display:block;
-    font-size:35px;
-    margin-bottom:10px;
+.love-card .emoji{
+    font-size:38px;
+    margin-bottom:12px;
 }
 
-.surprise{
-    text-align:center;
+.love-card h3{
+    color:#ffb1dc;
+    margin-bottom:8px;
 }
 
 .gift{
-    font-size:90px;
+    font-size:100px;
     cursor:pointer;
-    display:inline-block;
-    animation:bounce 1.5s infinite;
-}
-
-@keyframes bounce{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-15px);}
-}
-
-.hidden{
-    display:none;
-    margin-top:30px;
-    font-size:22px;
-    line-height:1.7;
-    animation:fade 1s ease;
-}
-
-@keyframes fade{
-    from{
-        opacity:0;
-        transform:translateY(20px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-.heart{
-    position:fixed;
-    pointer-events:none;
-    animation:float 4s linear forwards;
-    font-size:22px;
+    animation:float 2s infinite ease-in-out;
+    margin:20px;
 }
 
 @keyframes float{
-    from{
-        transform:translateY(0) scale(1);
-        opacity:1;
-    }
-    to{
-        transform:translateY(-100vh) scale(1.8);
-        opacity:0;
-    }
+    50%{transform:translateY(-15px)}
 }
 
-footer{
-    text-align:center;
-    padding:40px 20px;
-    opacity:.6;
+.secret{
+    display:none;
+    margin-top:30px;
+    animation:appear 1s ease;
+}
+
+@keyframes appear{
+    from{opacity:0;transform:translateY(20px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+.final-message{
+    font-size:22px;
+    line-height:2;
+}
+
+.signature{
+    margin-top:30px;
+    color:#ffacd9;
+    font-size:21px;
 }
 
 @media(max-width:600px){
-
-    .timeline{
-        grid-template-columns:repeat(2,1fr);
-    }
-
     .gallery{
         grid-template-columns:1fr;
     }
@@ -294,184 +277,278 @@ footer{
     .photo img{
         height:280px;
     }
-
 }
-
 </style>
 </head>
 
 <body>
 
+<div class="stars">
+    <span class="star" style="top:8%;left:10%"></span>
+    <span class="star" style="top:17%;left:80%"></span>
+    <span class="star" style="top:30%;left:30%"></span>
+    <span class="star" style="top:45%;left:90%"></span>
+    <span class="star" style="top:60%;left:12%"></span>
+    <span class="star" style="top:75%;left:70%"></span>
+    <span class="star" style="top:88%;left:25%"></span>
+    <span class="star" style="top:93%;left:90%"></span>
+</div>
+
+
 <!-- HERO -->
 
-<section class="hero">
+<section>
+<div class="container">
 
-<h1>Indira ❤️</h1>
+    <div class="badge">
+        A universe made especially for
+    </div>
 
-<p>27 October • A special day for someone very special</p>
+    <h1>Indira ❤️</h1>
 
-<button onclick="document.getElementById('letter').scrollIntoView()">
-Enter Your Birthday Universe 💫
-</button>
+    <p class="hero-text">
+        Today is not just your birthday.
+        <br>
+        Today is a reminder of how lucky I feel
+        to have you in my life.
+    </p>
 
+    <p style="color:#ffb1dc;margin-bottom:30px;">
+        27 October ✨
+    </p>
+
+    <button onclick="goTo('letter')">
+        Enter Your Birthday Universe 💫
+    </button>
+
+</div>
 </section>
 
 
 <!-- LETTER -->
 
 <section id="letter">
+<div class="container">
 
 <div class="card letter">
 
-<h2>For You, Indira ❤️</h2>
+<div class="badge">A letter from Chandan</div>
+
+<h2>💌 For My Indira</h2>
 
 <p>
-Happy Birthday to the most beautiful person in my life.
+Happy Birthday, Indira. ❤️
 </p>
-
-<br>
 
 <p>
-Four years ago, I never imagined that one person could become
-such an important part of my life.
+Four years have passed, and somehow you still have
+the ability to make my heart feel the same kind of
+happiness that it did when you first became special to me.
 </p>
-
-<br>
 
 <p>
-Your <strong>smile</strong>, your <strong>caring nature</strong>,
-your <strong>cute little anger</strong>, your
-<strong>cuteness</strong>, your <strong>loving heart</strong>,
-and especially your <strong>beautiful eyes</strong>...
+There are so many things I love about you.
+Your smile can make an ordinary day feel beautiful.
+Your caring nature reminds me how lucky I am.
+Your cute little anger somehow makes you even more adorable.
+And your loving nature is something I will always treasure.
 </p>
-
-<br>
 
 <p>
-Everything about you has become a beautiful part of my story.
+And then there are your eyes...
+I don't know how you do it, but sometimes just looking
+at you is enough to make everything else disappear.
 </p>
-
-<br>
 
 <p>
-I hope this birthday brings you endless happiness,
-beautiful memories and everything your heart wishes for.
+You are cute, caring, loving, sometimes adorably angry,
+and completely unforgettable.
+And somewhere along these four years,
+you became much more than just someone I love.
+You became a beautiful part of my life.
 </p>
-
-<br>
 
 <p>
-No matter where life takes us,
-I will always be grateful that our paths crossed.
+On your birthday, I wish you happiness that stays,
+smiles that never disappear, dreams that come true,
+and countless beautiful moments ahead.
 </p>
-
-<br>
 
 <p>
-Happy Birthday, my beautiful girl. ❤️
+Thank you for being you, Indira.
+❤️
 </p>
 
-<br>
-
-<p style="text-align:right;">
-— Chandan ❤️
-</p>
+<div style="text-align:center;margin-top:30px;">
+<button onclick="goTo('journey')">
+Our 4 Year Journey 🕰️
+</button>
+</div>
 
 </div>
 
+</div>
 </section>
 
 
 <!-- JOURNEY -->
 
-<section>
+<section id="journey">
+<div class="container">
 
-<h2>Our 4 Year Journey ❤️</h2>
+<div class="badge">Four years of us</div>
+
+<h2>🕰️ Our Little Journey</h2>
+
+<p>
+Four years. Countless conversations.
+Hundreds of memories.
+And one person who still makes my heart smile.
+</p>
 
 <div class="timeline">
 
-<div class="year">
-<h3>Year 1</h3>
-<p>The beginning of our beautiful story.</p>
+<div class="timeline-item">
+<strong>🌱 The Beginning</strong>
+<p>
+Somehow, two people became an important part
+of each other's lives.
+</p>
 </div>
 
-<div class="year">
-<h3>Year 2</h3>
-<p>More memories, more smiles and more moments together.</p>
+<div class="timeline-item">
+<strong>💗 Growing Together</strong>
+<p>
+The little conversations, laughs, silly moments,
+and memories slowly became something special.
+</p>
 </div>
 
-<div class="year">
-<h3>Year 3</h3>
-<p>Growing together and creating unforgettable memories.</p>
+<div class="timeline-item">
+<strong>🌙 Through Everything</strong>
+<p>
+Four years brought beautiful moments,
+challenges, laughter and countless memories.
+</p>
 </div>
 
-<div class="year">
-<h3>Year 4</h3>
-<p>Still writing our story, one beautiful moment at a time.</p>
+<div class="timeline-item">
+<strong>✨ Today</strong>
+<p>
+And here we are — still creating memories,
+with many more chapters waiting for us.
+</p>
 </div>
 
 </div>
 
+<div style="margin-top:30px;">
+<button onclick="goTo('memories')">
+Open Our Memories 📸
+</button>
+</div>
+
+</div>
 </section>
 
 
 <!-- MEMORIES -->
 
-<section>
+<section id="memories">
+<div class="container">
 
-<h2>Our Memories 📸</h2>
+<div class="badge">Moments worth keeping</div>
+
+<h2>📸 Our Memories</h2>
+
+<p>
+Every picture tells a little story.
+These are some of the moments I want to keep close.
+</p>
 
 <div class="gallery">
+
+<!-- PHOTO 1 -->
 
 <div class="photo">
 <img src="IMG-20260926-WA0008.jpg">
 <p>One beautiful memory ❤️</p>
 </div>
 
+
+<!-- PHOTO 2 -->
+
 <div class="photo">
 <img src="IMG-20260926-WA0009.jpg">
 <p>A moment worth remembering ✨</p>
 </div>
+
+
+<!-- PHOTO 3 -->
 
 <div class="photo">
 <img src="IMG-20260926-WA0010.jpg">
 <p>Just you being you 🥰</p>
 </div>
 
+
+<!-- PHOTO 4 -->
+
 <div class="photo">
 <img src="IMG-20260926-WA0011.jpg">
 <p>A memory I treasure 💗</p>
 </div>
+
+
+<!-- PHOTO 5 -->
 
 <div class="photo">
 <img src="IMG-20260926-WA0012.jpg">
 <p>Another little chapter 🌸</p>
 </div>
 
+
+<!-- PHOTO 6 -->
+
 <div class="photo">
 <img src="IMG-20260926-WA0013.jpg">
 <p>And many more to come ❤️</p>
 </div>
+
+
+<!-- PHOTO 7 -->
 
 <div class="photo">
 <img src="1000428760-10mb.jpg">
 <p>Another beautiful memory ❤️</p>
 </div>
 
+
+<!-- PHOTO 8 -->
+
 <div class="photo">
 <img src="1000428793-10mb.jpg">
 <p>A moment I'll always remember ✨</p>
 </div>
+
+
+<!-- PHOTO 9 -->
 
 <div class="photo">
 <img src="IMG20240919191729.jpg">
 <p>A special little memory 💕</p>
 </div>
 
+
+<!-- PHOTO 10 -->
+
 <div class="photo">
 <img src="IMG_20230929_061111_436.jpg">
 <p>One more chapter of our story 🌸</p>
 </div>
+
+
+<!-- PHOTO 11 -->
 
 <div class="photo">
 <img src="IMG_20260926_085112_362.jpg">
@@ -480,144 +557,202 @@ Happy Birthday, my beautiful girl. ❤️
 
 </div>
 
+<div style="margin-top:30px;">
+<button onclick="goTo('things')">
+Things I Love About You 💗
+</button>
+</div>
+
+</div>
 </section>
 
 
 <!-- THINGS I LOVE -->
 
-<section>
+<section id="things">
+<div class="container">
 
-<h2>Things I Love About You 💕</h2>
+<div class="badge">There are so many...</div>
+
+<h2>💗 Things I Love About You</h2>
 
 <div class="love-grid">
 
-<div class="love">
-<span>😊</span>
+<div class="love-card">
+<div class="emoji">😊</div>
 <h3>Your Smile</h3>
-<p>Your smile can instantly make my day better.</p>
+<p>
+Because your smile can instantly make my day better.
+</p>
 </div>
 
-<div class="love">
-<span>❤️</span>
+<div class="love-card">
+<div class="emoji">🫶</div>
 <h3>Your Caring Nature</h3>
-<p>The way you care about people is beautiful.</p>
+<p>
+The way you care about people is one of the things
+that makes you so special.
+</p>
 </div>
 
-<div class="love">
-<span>😤</span>
+<div class="love-card">
+<div class="emoji">😤❤️</div>
 <h3>Your Anger</h3>
-<p>Even your little angry moments are somehow cute.</p>
+<p>
+Even your cute angry moments somehow make you adorable.
+</p>
 </div>
 
-<div class="love">
-<span>🥰</span>
+<div class="love-card">
+<div class="emoji">🥰</div>
 <h3>Your Cuteness</h3>
-<p>You have a special way of making everything adorable.</p>
+<p>
+You have a way of being cute without even trying.
+</p>
 </div>
 
-<div class="love">
-<span>💗</span>
-<h3>Your Loving Heart</h3>
-<p>Your love makes everything feel more special.</p>
+<div class="love-card">
+<div class="emoji">💕</div>
+<h3>Your Loving Nature</h3>
+<p>
+Your love makes ordinary moments feel extraordinary.
+</p>
 </div>
 
-<div class="love">
-<span>👀</span>
+<div class="love-card">
+<div class="emoji">👀</div>
 <h3>Your Eyes</h3>
-<p>Your eyes are honestly impossible to ignore.</p>
+<p>
+There is something about your eyes that I could never
+properly explain.
+</p>
 </div>
 
 </div>
 
+<div style="margin-top:35px;">
+<button onclick="goTo('surprise')">
+I Have One More Surprise 🎁
+</button>
+</div>
+
+</div>
 </section>
 
 
 <!-- SURPRISE -->
 
-<section class="surprise">
+<section id="surprise">
+<div class="container">
 
-<div class="card">
+<div class="badge">Don't stop here...</div>
 
-<h2>A Little Surprise 🎁</h2>
-
-<p>There is something waiting for you...</p>
-
-<div class="gift" onclick="openGift()">🎁</div>
-
-<div id="secret" class="hidden">
+<h2>🎁 A Little Surprise</h2>
 
 <p>
-If you are reading this...
+There is one last thing waiting for you.
 </p>
 
-<p>
-I just want you to know that you are one of the
-most precious people in my life. ❤️
+<div class="gift" onclick="openGift()">
+🎁
+</div>
+
+<p style="color:#ffb1dc;">
+Tap the gift ❤️
 </p>
 
-<p>
-Thank you for being you.
+<div class="secret" id="secret">
+
+<div class="heart">❤️</div>
+
+<p class="final-message">
+
+Indira,
+
+If I could give you one thing today,
+I would give you the ability to see yourself
+through my eyes.
+
+<br><br>
+
+Then you would finally understand
+how beautiful, precious and special
+you are to me.
+
+<br><br>
+
+Four years have given me countless memories,
+but I hope they are only the beginning.
+
 </p>
 
-<p>
-Happy Birthday, Indira. 💕
-</p>
-
-<p>
-I love you. ❤️
-</p>
-
+<div class="signature">
+Happy Birthday, My Love. 🌹
+<br><br>
+— Chandan ❤️
 </div>
 
 </div>
 
+</div>
 </section>
-
-
-<footer>
-
-Made with ❤️ by Chandan for Indira
-
-</footer>
 
 
 <script>
 
+function goTo(id){
+    document.getElementById(id).scrollIntoView({
+        behavior:"smooth"
+    });
+}
+
 function openGift(){
 
-document.getElementById("secret").style.display="block";
+    document.getElementById("secret").style.display="block";
 
-createHearts();
+    document.getElementById("secret").scrollIntoView({
+        behavior:"smooth"
+    });
 
+    createHearts();
 }
 
 function createHearts(){
 
-for(let i=0;i<30;i++){
+    for(let i=0;i<20;i++){
 
-let heart=document.createElement("div");
+        const heart=document.createElement("div");
 
-heart.className="heart";
+        heart.innerHTML="❤️";
 
-heart.innerHTML="❤️";
+        heart.style.position="fixed";
+        heart.style.left=Math.random()*100+"vw";
+        heart.style.bottom="-30px";
+        heart.style.fontSize=(15+Math.random()*25)+"px";
+        heart.style.zIndex="9999";
+        heart.style.pointerEvents="none";
+        heart.style.transition="transform 4s linear, opacity 4s";
 
-heart.style.left=Math.random()*100+"vw";
+        document.body.appendChild(heart);
 
-heart.style.bottom="0";
+        setTimeout(()=>{
 
-heart.style.animationDuration=(3+Math.random()*3)+"s";
+            heart.style.transform=
+                "translateY(-110vh) rotate("+
+                (Math.random()*360)+
+                "deg)";
 
-document.body.appendChild(heart);
+            heart.style.opacity="0";
 
-setTimeout(()=>{
-heart.remove();
-},6000);
+        },100);
 
-}
-
+        setTimeout(()=>{
+            heart.remove();
+        },4200);
+    }
 }
 
 </script>
 
 </body>
-  </html>
+    </html>
